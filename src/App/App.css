@@ -1,38 +1,72 @@
+body {
+  background: url(../../public/bg-pattern.svg)  hsl(230, 100%, 99%) no-repeat;
+  background-size: 100%;
+}
+
 .App {
+  display: grid;
+  text-align: center;
+  margin: 1%;
+}
+
+.circles {
+  position: absolute;
+  top: 10%;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: -1;
+}
+
+.circles svg {
   text-align: center;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+.circle1 {
+  animation: circle1 infinite 10s linear;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
+.circle2 {
+  animation: circle2 infinite 10s linear;
+}
+
+.text {
+  display: grid;
+  align-content: flex-end;
+  height: 20vh;
+}
+
+.main-text {
+  font-weight: 800;
+  font-size: 30px;
+  color: hsl(227, 35%, 25%);
+}
+
+.sub-text {
+  font-weight: 600;
+  font-size: 15px;
+  color: hsl(225, 20%, 60%);
+}
+
+@keyframes circle1 {
+  0% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.25);
+  }
+  100% {
+    transform: scale(1);
   }
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
-}
-
-.App-link {
-  color: #61dafb;
-}
-
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
+@keyframes circle2 {
+  0% {
+    transform: scale(1);
   }
-  to {
-    transform: rotate(360deg);
+  50% {
+    transform: scale(0.75);
+  }
+  100% {
+    transform: scale(1);
   }
 }
