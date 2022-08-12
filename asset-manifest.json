@@ -1,0 +1,16 @@
+{
+  "files": {
+    "main.css": "/interactive-pricing-component/static/css/main.16a1c936.css",
+    "main.js": "/interactive-pricing-component/static/js/main.f0f4eef1.js",
+    "index.html": "/interactive-pricing-component/index.html",
+    "static/media/icon-slider.svg": "/interactive-pricing-component/static/media/icon-slider.cbca35e0d11c560ba351.svg",
+    "static/media/bg-pattern-dark.svg": "/interactive-pricing-component/static/media/bg-pattern-dark.83d11a996dada037de90.svg",
+    "static/media/bg-pattern.svg": "/interactive-pricing-component/static/media/bg-pattern.76d3fa7ddce078ad96b5.svg",
+    "main.16a1c936.css.map": "/interactive-pricing-component/static/css/main.16a1c936.css.map",
+    "main.f0f4eef1.js.map": "/interactive-pricing-component/static/js/main.f0f4eef1.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.16a1c936.css",
+    "static/js/main.f0f4eef1.js"
+  ]
+}
