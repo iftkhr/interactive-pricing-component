@@ -23,7 +23,8 @@
 }
 
 .price {
-	font-size: 30px;
+	font-size: 40px;
+	font-weight: 800;
 	color: hsl(227, 35%, 25%);
 	justify-self: right;
 	display: grid;
@@ -86,6 +87,7 @@
 	grid-template-columns: 3fr 1fr 3fr;
 	justify-items: right;
 	font-size: 15px;
+	color: hsl(225, 20%, 60%);
 }
 
 .switch {
@@ -167,14 +169,14 @@ input:checked + .round:before {
 
 .list {
 	display: grid;
-	gap: 5px;
+	gap: 10px;
 }
 
 .items {
 	display: grid;
 	grid-template-columns: 5% 95%;
 	align-items: center;
-	gap: 2px;
+	gap: 10px;
 	color: hsl(225, 20%, 60%);
 	font-size: 14px;
 }
@@ -189,4 +191,9 @@ input:checked + .round:before {
 	height: 40px;
 	border-radius: 50px;
 	text-align: center;
+	cursor: pointer;
+}
+
+.button:hover {
+	color: #fff;
 }
