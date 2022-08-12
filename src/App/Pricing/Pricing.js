@@ -122,7 +122,8 @@ function Pricing() {
 					</label>
 					<div className="yearly">
 						Yearly Billing{" "}
-						<span className="discount">25% discount</span>
+						<span className="discount big">25% discount</span>
+						<span className="discount small">-25%</span>
 					</div>
 				</div>
 			</div>

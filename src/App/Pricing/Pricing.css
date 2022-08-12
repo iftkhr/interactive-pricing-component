@@ -1,12 +1,20 @@
 .pricing-container {
 	display: grid;
 	width: 25%;
-	min-width: 300px;
-	gap: 40px;
-	background: hsl(0, 0%, 100%);
+	min-width: 400px;
+	gap: 30px;
 	border-radius: 20px;
-	padding: 50px;
-	box-shadow: 0px 5px 5px 0px #bbb;
+	padding: 40px;
+	align-self: flex-start;
+	z-index: 1;
+}
+
+#light .pricing-container {
+	background: rgb(255, 255, 255);
+}
+
+#dark .pricing-container {
+	background: rgb(0, 0, 0);
 }
 
 .top {
@@ -18,12 +26,21 @@
 .views,
 .permonth {
 	font-size: 15px;
-	color: hsl(225, 20%, 60%);
 	justify-self: left;
 }
 
+#light .views,
+.permonth {
+	color: hsl(225, 20%, 60%);
+}
+
+#dark .views,
+.permonth {
+	color: rgb(255, 255, 255);
+}
+
 .price {
-	font-size: 40px;
+	font-size: 30px;
 	font-weight: 800;
 	color: hsl(227, 35%, 25%);
 	justify-self: right;
@@ -31,10 +48,26 @@
 	grid-template-columns: auto auto;
 }
 
+#light .price {
+	color: hsl(227, 35%, 25%);
+}
+
+#dark .price {
+	color: rgb(241, 251, 255);
+}
+
 .permonth {
 	justify-self: flex-start;
 	align-self: center;
 	padding: 5px;
+}
+
+#light .permonth {
+	color: hsl(225, 20%, 60%);
+}
+
+#dark .permonth {
+	color: rgb(255, 255, 255);
 }
 
 .middle {
@@ -87,7 +120,15 @@
 	grid-template-columns: 3fr 1fr 3fr;
 	justify-items: right;
 	font-size: 15px;
+	gap: 5px;
+}
+
+#light .billing {
 	color: hsl(225, 20%, 60%);
+}
+
+#dark .billing {
+	color: rgb(255, 255, 255);
 }
 
 .switch {
@@ -124,10 +165,17 @@
 	width: 20px;
 	left: 2.5px;
 	bottom: 2.5px;
-	background-color: white;
 	-webkit-transition: 0.4s;
 	transition: 0.4s;
 	border-radius: 50%;
+}
+
+#light .round:before {
+	background-color: #fff;
+}
+
+#dark .round:before {
+	background-color: #000;
 }
 
 input:checked + .round {
@@ -153,8 +201,16 @@ input:checked + .round:before {
 	margin-left: 5px;
 	border-radius: 5px;
 	font-size: 10px;
+}
+
+#light .discount {
 	background: hsl(14, 92%, 95%);
 	color: hsl(15, 100%, 70%);
+}
+
+#dark .discount {
+	background: hsl(15, 100%, 70%);
+	color: hsl(14, 92%, 95%);
 }
 
 .line {
@@ -177,8 +233,15 @@ input:checked + .round:before {
 	grid-template-columns: 5% 95%;
 	align-items: center;
 	gap: 10px;
+	font-size: 13px;
+}
+
+#light .items {
 	color: hsl(225, 20%, 60%);
-	font-size: 14px;
+}
+
+#dark .items {
+	color: rgb(255, 255, 255);
 }
 
 .button {
@@ -194,6 +257,66 @@ input:checked + .round:before {
 	cursor: pointer;
 }
 
-.button:hover {
-	color: #fff;
+#light .button {
+	background-color: hsl(227, 35%, 25%);
+	color: hsl(226, 100%, 87%);
+}
+
+#dark .button {
+	color: hsl(227, 35%, 25%);
+	background-color: hsl(226, 100%, 87%);
+}
+
+#light .button:hover {
+	color: hsl(226, 100%, 87%);
+}
+
+#dark .button:hover {
+	color: hsl(227, 35%, 25%);
+}
+
+.small {
+	display: none;
+}
+
+@media screen and (max-width: 500px) {
+	.pricing-container {
+		width: 70%;
+		min-width: 250px;
+	}
+	.top {
+		grid-template-columns: 100%;
+		gap: 10px;
+	}
+	.views,
+	.permonth {
+		font-size: 15px;
+		justify-self: center;
+	}
+	.slider::-webkit-slider-thumb {
+		width: 30px;
+		height: 30px;
+	}
+	.billing {
+		font-size: 13px;
+	}
+	.price {
+		justify-self: center;
+	}
+	.small {
+		display: inline;
+	}
+	.big {
+		display: none;
+	}
+	.bottom {
+		grid-template-columns: 100%;
+		gap: 20px;
+	}
+	.items {
+		justify-self: center;
+	}
+	.button {
+		justify-self: center;
+	}
 }

@@ -1,15 +1,20 @@
-body {
-	background: url(../../public/bg-pattern.svg) hsl(230, 100%, 99%) no-repeat
-		0px -50px;
-	background-size: 100%;
+.app-container {
+	width: 100%;
+	height: 100vh;
+	display: grid;
+	grid-template-rows: auto auto 5%;
+	justify-items: center;
+	align-items: center;
 }
 
-.app-container {
-	display: grid;
-	justify-items: center;
-	gap: 100px;
-	margin: 1%;
-	margin-top: 2%;
+#light {
+	background: url(../../public/bg-pattern.svg) rgb(250, 251, 255) no-repeat;
+	background-size: 100% 55%;
+}
+
+#dark {
+	background: url(../../public/bg-pattern-dark.svg) rgb(50, 51, 55) no-repeat;
+	background-size: 100% 55%;
 }
 
 .circles {
@@ -17,7 +22,6 @@ body {
 	top: 10%;
 	left: 50%;
 	transform: translateX(-50%);
-	z-index: -1;
 }
 
 .circles svg {
@@ -35,21 +39,66 @@ body {
 .text {
 	display: grid;
 	align-content: flex-end;
-	height: 20vh;
+	height: 15vh;
 	text-align: center;
+	z-index: 1;
 }
 
 .main-text {
 	font-weight: 800;
 	font-size: 30px;
-	color: hsl(227, 35%, 25%);
+}
+
+#light .main-text {
+	color: rgb(41, 51, 86);
+}
+
+#dark .main-text {
+	color: rgb(241, 251, 255);
 }
 
 .sub-text {
 	font-weight: 600;
 	font-size: 15px;
-	color: hsl(225, 20%, 60%);
+	color: rgb(133, 143, 173);
 	margin-top: 20px;
+}
+
+#light .sub-text {
+	color: rgb(133, 143, 173);
+}
+
+#dark .sub-text {
+	color: rgb(255, 255, 255);
+}
+
+.theme-toggle {
+	display: grid;
+	justify-items: center;
+	margin-bottom: 50px;
+	cursor: pointer;
+	font-size: 15px;
+}
+
+#light .theme-toggle {
+	color: rgb(41, 51, 86);
+}
+
+#dark .theme-toggle {
+	color: rgb(241, 251, 255);
+}
+
+.theme-toggle svg {
+	width: 30px;
+	height: 30px;
+}
+
+#light .theme-toggle svg path {
+	fill: rgb(41, 51, 86);
+}
+
+#dark .theme-toggle svg path {
+	fill: rgb(241, 251, 255);
 }
 
 @keyframes circle1 {
@@ -73,5 +122,24 @@ body {
 	}
 	100% {
 		transform: scale(1);
+	}
+}
+
+@media screen and (max-width: 500px) {
+	.text {
+		height: 10vh;
+	}
+	.main-text {
+		font-size: 25px;
+	}
+	.circles {
+		top: 5%;
+	}
+	.theme-toggle {
+		margin-bottom: 25px;
+	}
+	.theme-toggle svg {
+		width: 25px;
+		height: 25px;
 	}
 }
